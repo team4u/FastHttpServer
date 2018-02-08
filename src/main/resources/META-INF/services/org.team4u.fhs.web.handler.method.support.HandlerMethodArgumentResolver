@@ -1,0 +1,5 @@
+org.team4u.fhs.web.handler.method.support.RequestParamArgumentResolver
+org.team4u.fhs.web.handler.method.support.RequestHeaderArgumentResolver
+org.team4u.fhs.web.handler.method.support.CookieValueArgumentResolver
+org.team4u.fhs.web.handler.method.support.RoutingContextArgumentResolver
+org.team4u.fhs.web.handler.method.support.RequestBodyArgumentResolver

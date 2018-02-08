@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="/static/js/demo.js"></script>
+
+    <script type="text/javascript">
+        if (!window.WebSocket) {
+            window.WebSocket = window.MozWebSocket;
+        }
+
+        function createSocket(id) {
+            if (window.WebSocket) {
+                var socket = new WebSocket("ws://127.0.0.1:7000/webSocketTest?id=" + id);
+                socket.onmessage = function (event) {
+                    console.log(id + ":" + event.data);
+                };
+                socket.onopen = function (event) {
+                    console.log("open");
+                };
+                socket.onclose = function (event) {
+                    console.log("close");
+                };
+
+                return socket;
+            } else {
+                alert("你的浏览器不支持 WebSocket！");
+                return null;
+            }
+        }
+
+        var s1 = createSocket(1);
+        var s2 = createSocket(2);
+        s2.binaryType = "arraybuffer";
+
+        var index = 0;
+        var timer = setInterval(function () {
+            if (index++ > 6) {
+                clearInterval(timer);
+                return;
+            }
+
+            if (index % 2 == 0) {
+                var buffer = new ArrayBuffer(1);
+                var bytes = new Uint8Array(buffer);
+                for (var i = 0; i < bytes.length; i++) {
+                    bytes[i] = i;
+                }
+                s2.send(buffer);
+            } else {
+                s1.send("{name:'" + new Date().getSeconds() + "'}");
+            }
+        }, 1000);
+
+    </script>
+</head>
+<body>
+Hello
+</body>
+</html>

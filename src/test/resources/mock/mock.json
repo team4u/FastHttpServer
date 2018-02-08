@@ -1,0 +1,68 @@
+{
+  actions: [
+    {
+      request: {
+        path: "/test/j",
+        method: "GET",
+        enable: true
+      },
+      response: {
+        header: {
+          "content-type": "application/json"
+        },
+        body: {
+          result: "123"
+        },
+        file: null
+      }
+    },
+    {
+      request: {
+        path: "/test/rest/:x/:y"
+      },
+      response: {
+        view: "raw",
+        body: "12"
+      }
+    },
+    {
+      request: {
+        path: "/test/body"
+      },
+      response: {
+        view: "json",
+        body: [
+          {
+            name: "jay"
+          }
+        ]
+      }
+    },
+    {
+      request: {
+        path: "/test/session/*"
+      },
+      response: {
+        view: "raw",
+        body: "11111111111111111111111111111111"
+      }
+    },
+    {
+      request: {
+        path: "/test/model"
+      },
+      response: {
+        view: "raw",
+        body: "fjay"
+      }
+    },
+    {
+      request: {
+        path: "/test/file"
+      },
+      response: {
+        file: "mock/mock.js"
+      }
+    }
+  ]
+}

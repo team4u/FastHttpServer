@@ -1,0 +1,3 @@
+org.team4u.fhs.web.handler.simple.SimpleHttpRouteHandlerAdapter
+org.team4u.fhs.web.handler.method.MethodHttpRouteAdapter
+org.team4u.fhs.web.handler.resource.StaticResourceHandlerAdapter

@@ -1,0 +1,17 @@
+#var header = {
+<title>BeetlView</title>
+<script src="/static/js/demo.js"></script>
+#};
+
+#var body = {
+
+Hello, ${name}
+<br>
+#for(i in list){
+${i}
+<br>
+#}
+
+#};
+
+#include("/layout/layout.html",{ header : header, body : body}){}
