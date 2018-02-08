@@ -1,7 +1,5 @@
 
-FastHttpServer
-===============
-
+# FastHttpServer
 FastHttpServer为基于Netty轻量级/高性能的HttpServer，无需依赖J2EE容器独立运行。
 
 FastHttpServer有以下几个特点：
@@ -16,9 +14,9 @@ FastHttpServer有以下几个特点：
 8. 支持嵌入式运行
 
 
-####HOW TO USE
-#####服务端
-######添加包依赖(Maven:pom.xml)
+## HOW TO USE
+### 服务端
+#### 添加包依赖(Maven:pom.xml)
 ```xml
 <dependency>
   <groupId>org.team4u.fhs</groupId>
@@ -45,7 +43,6 @@ FastHttpServer有以下几个特点：
 </dependency>
 ```
 
-
 加入仓库：
 
 ```xml
@@ -60,7 +57,7 @@ FastHttpServer有以下几个特点：
     </repository>
 </repositories>
 ```
-######服务端
+#### Quick Start
 
 创建标准Controller
 
@@ -314,8 +311,6 @@ Hello
 </html>
 ```
 
-
-
 启动服务
 
 ```java
@@ -369,7 +364,7 @@ HttpServer server = new NettyHttpServer(
         .listen(9080);
 ```
 
-######客户端
+### 客户端
 
 直接用浏览器访问以下地址:
 
