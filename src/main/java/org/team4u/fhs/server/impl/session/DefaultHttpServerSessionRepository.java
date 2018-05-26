@@ -15,7 +15,7 @@ public class DefaultHttpServerSessionRepository implements HttpServerSessionRepo
         if (cache == null) {
             synchronized (this) {
                 if (cache == null) {
-                    cache = new TimeMap<String, HttpServerSession>(session.getMaxInactiveInterval());
+                    cache = new TimeMap<String, HttpServerSession>(session.getMaxInactiveInterval() * 1000);
                 }
             }
         }
