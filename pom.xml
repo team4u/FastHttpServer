@@ -62,7 +62,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-http</artifactId>
-            <version>4.0.5</version>
+            <version>5.7.19</version>
             <scope>test</scope>
         </dependency>
         <dependency>
